@@ -4,21 +4,18 @@ using UnityEngine;
 
 public class spinComponent : MonoBehaviour
 {
-    private bool printedMessage;
+    private Transform myTransform;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Hello from Start");
+        var myTransform = GetComponent<Transform>();
+        Debug.Log(myTransform.position);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!printedMessage)
-        {
-            Debug.Log("Hello from Update");
-            printedMessage = true;
-        }
+        myTransform.Rotate(0.1f, 0.1f, 0.1f);
     }
 }
